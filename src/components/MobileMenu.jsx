@@ -1,5 +1,5 @@
 import React from 'react';
-import { X, Search, ChevronRight, ArrowUpRight } from 'lucide-react';
+import { X, Search, ChevronRight } from 'lucide-react';
 
 export default function MobileMenu({
   isOpen,

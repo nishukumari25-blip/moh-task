@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowUp, Instagram, Twitter, Facebook, Youtube, Globe, Heart } from 'lucide-react';
+import { ArrowUp, Instagram, Twitter, Facebook, Youtube, Globe } from 'lucide-react';
 
 export default function Footer({ onNavigate, onSelectCategory }) {
   const scrollToTop = () => {

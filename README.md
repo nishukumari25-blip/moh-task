@@ -28,7 +28,6 @@ LUXE is designed to evoke the restraint and timeless sophistication of modern lu
    - Links: Home, Shop, Collections, About, Contact
    - Working search trigger (modal overlay with live query and curated keywords)
    - Interactive Wishlist counter badge
-   - Interactive Wardrobe shopping bag counter badge
    - Mobile hamburger menu triggering an editorial slide-out drawer
 3. **Editorial Hero Banner**:
    - Grand campaign imagery with layered subtle gradients
@@ -83,9 +82,8 @@ LUXE is designed to evoke the restraint and timeless sophistication of modern lu
 
 - **Frontend Product Search**: Instant debounced search filtering by name, department, material, and keywords.
 - **Category Filtering**: Seamless toggling between departments with responsive count badges.
-- **Quick View Modal**: Deep-dive popup modal with image switcher, size selector, color swatches, composition details, and "Add to Wardrobe" action.
+- **Quick View Modal**: Deep-dive popup modal with image switcher, size selector, color swatches, noble fabric composition details, and "Request Private Viewing" concierge action.
 - **Wishlist Toggle**: Heart icon on every card and modal updating live counter and toast state.
-- **Wardrobe Shopping Bag**: Counter updates smoothly with each product added.
 - **Micro-Interactions**: Smooth scrolling between anchors (`#home`, `#shop`, `#collections`, `#why-us`, `#contact`, `#about`), image hover scale, and toast notifications.
 
 ---

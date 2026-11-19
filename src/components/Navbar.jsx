@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Search, Heart, ShoppingBag, Menu, X } from 'lucide-react';
+import { Search, Heart, Menu } from 'lucide-react';
 
 const NAV_LINKS = [
   { name: 'Home', href: '#home' },
@@ -13,10 +13,8 @@ export default function Navbar({
   onOpenSearch,
   onOpenMobileMenu,
   wishlistCount = 0,
-  cartCount = 0,
   onNavigate,
   onOpenWishlistToast,
-  onOpenCartToast,
 }) {
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -126,26 +124,13 @@ export default function Navbar({
               <button
                 onClick={onOpenWishlistToast}
                 className="relative p-1.5 text-charcoal-800 hover:text-gold-600 transition-colors"
-                aria-label="View wishlist"
+                aria-label="View saved pieces"
+                title="Private Wishlist"
               >
                 <Heart className="w-5 h-5 stroke-[1.75]" />
                 {wishlistCount > 0 && (
                   <span className="absolute -top-1 -right-1 bg-gold-600 text-ivory-50 text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold">
                     {wishlistCount}
-                  </span>
-                )}
-              </button>
-
-              {/* Shopping Bag Icon */}
-              <button
-                onClick={onOpenCartToast}
-                className="relative p-1.5 text-charcoal-800 hover:text-gold-600 transition-colors"
-                aria-label="View bag"
-              >
-                <ShoppingBag className="w-5 h-5 stroke-[1.75]" />
-                {cartCount > 0 && (
-                  <span className="absolute -top-1 -right-1 bg-charcoal-900 text-ivory-50 text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold">
-                    {cartCount}
                   </span>
                 )}
               </button>

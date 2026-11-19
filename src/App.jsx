@@ -21,7 +21,6 @@ export default function App() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [quickViewProduct, setQuickViewProduct] = useState(null);
   const [wishlist, setWishlist] = useState(['prod-w1', 'prod-a1']);
-  const [cartCount, setCartCount] = useState(2);
   const [toast, setToast] = useState(null);
 
   const showToast = (message, type = 'success') => {
@@ -66,18 +65,13 @@ export default function App() {
     });
   };
 
-  const handleAddToCart = (product) => {
-    setCartCount((prev) => prev + 1);
+  const handleInquire = (product) => {
     const sizeNote = product.selectedSize ? ` (Size ${product.selectedSize})` : '';
-    showToast(`Added "${product.name}${sizeNote}" to your wardrobe shopping bag`, 'success');
+    showToast(`Private viewing request for "${product.name}${sizeNote}" received. Our concierge will contact you.`, 'success');
   };
 
   const handleOpenWishlistToast = () => {
     showToast(`You have ${wishlist.length} curated creations saved in your private wishlist`);
-  };
-
-  const handleOpenCartToast = () => {
-    showToast(`Your wardrobe shopping bag contains ${cartCount} creations`);
   };
 
   return (
@@ -95,10 +89,8 @@ export default function App() {
         onOpenSearch={() => setIsSearchOpen(true)}
         onOpenMobileMenu={() => setIsMobileMenuOpen(true)}
         wishlistCount={wishlist.length}
-        cartCount={cartCount}
         onNavigate={handleNavigate}
         onOpenWishlistToast={handleOpenWishlistToast}
-        onOpenCartToast={handleOpenCartToast}
       />
 
       {/* Main Content Area */}
@@ -123,7 +115,6 @@ export default function App() {
           onQuickView={(prod) => setQuickViewProduct(prod)}
           onToggleWishlist={handleToggleWishlist}
           wishlistIds={wishlist}
-          onAddToCart={handleAddToCart}
         />
 
         {/* 6. Trending Collection Section */}
@@ -182,7 +173,7 @@ export default function App() {
         product={quickViewProduct}
         isOpen={!!quickViewProduct}
         onClose={() => setQuickViewProduct(null)}
-        onAddToCart={handleAddToCart}
+        onInquire={handleInquire}
         onToggleWishlist={handleToggleWishlist}
         isWishlisted={quickViewProduct ? wishlist.includes(quickViewProduct.id) : false}
       />

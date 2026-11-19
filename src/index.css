@@ -75,3 +75,13 @@
 .gold-line:hover::after {
   width: 100%;
 }
+
+/* Hide scrollbars for clean luxury feel while keeping scroll functional */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+

@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { X, Heart, ShoppingBag, Check, ShieldCheck, Truck, Sparkles } from 'lucide-react';
+import { X, Heart, ShieldCheck, Truck, Sparkles } from 'lucide-react';
 
 export default function QuickViewModal({
   product,
   isOpen,
   onClose,
-  onAddToCart,
+  onInquire,
   onToggleWishlist,
   isWishlisted,
 }) {
@@ -208,13 +208,13 @@ export default function QuickViewModal({
             <div className="flex items-center gap-3">
               <button
                 onClick={() => {
-                  onAddToCart({ ...product, selectedSize, selectedColor });
+                  onInquire?.({ ...product, selectedSize, selectedColor });
                   onClose();
                 }}
                 className="flex-1 py-4 bg-charcoal-950 hover:bg-gold-600 text-ivory-50 transition-colors text-xs uppercase tracking-ultra font-semibold flex items-center justify-center gap-2 shadow-lg"
               >
-                <ShoppingBag className="w-4 h-4" />
-                <span>Add to Wardrobe</span>
+                <Sparkles className="w-4 h-4 text-gold-400" />
+                <span>Request Private Viewing</span>
               </button>
 
               <button

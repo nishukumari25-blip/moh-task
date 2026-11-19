@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import { Heart, Eye, ShoppingBag } from 'lucide-react';
+import { Heart, Eye } from 'lucide-react';
 
 export default function ProductCard({
   product,
   onQuickView,
   onToggleWishlist,
   isWishlisted = false,
-  onAddToCart,
 }) {
   const [isHovered, setIsHovered] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
@@ -102,7 +101,7 @@ export default function ProductCard({
 
         {/* Hover Action Bar */}
         <div
-          className={`absolute inset-x-3 bottom-3 z-10 grid grid-cols-2 gap-2 transition-all duration-300 ${
+          className={`absolute inset-x-3 bottom-3 z-10 transition-all duration-300 ${
             isHovered ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2 pointer-events-none'
           }`}
         >
@@ -111,21 +110,10 @@ export default function ProductCard({
               e.stopPropagation();
               onQuickView(product);
             }}
-            className="flex items-center justify-center gap-1.5 py-2.5 px-2 bg-ivory-50/95 hover:bg-ivory-50 text-charcoal-950 text-[11px] uppercase tracking-wider font-medium shadow-md backdrop-blur-sm border border-sand-300 transition-colors"
+            className="w-full flex items-center justify-center gap-2 py-3 px-3 bg-charcoal-950/95 hover:bg-gold-500 hover:text-charcoal-950 text-ivory-50 text-[11px] uppercase tracking-ultra font-semibold shadow-xl backdrop-blur-sm transition-all duration-300 border border-gold-500/30"
           >
             <Eye className="w-3.5 h-3.5" />
-            <span className="hidden sm:inline">Quick View</span>
-            <span className="sm:hidden">View</span>
-          </button>
-          <button
-            onClick={(e) => {
-              e.stopPropagation();
-              onAddToCart(product);
-            }}
-            className="flex items-center justify-center gap-1.5 py-2.5 px-2 bg-charcoal-950 hover:bg-gold-600 text-ivory-50 text-[11px] uppercase tracking-wider font-medium shadow-md transition-colors"
-          >
-            <ShoppingBag className="w-3.5 h-3.5" />
-            <span>Add</span>
+            <span>Quick View</span>
           </button>
         </div>
       </div>

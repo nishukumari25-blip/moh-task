@@ -11,7 +11,6 @@ export default function FeaturedProducts({
   onQuickView,
   onToggleWishlist,
   wishlistIds = [],
-  onAddToCart,
 }) {
   const [sortBy, setSortBy] = useState('featured');
 
@@ -177,7 +176,6 @@ export default function FeaturedProducts({
                 onQuickView={onQuickView}
                 onToggleWishlist={onToggleWishlist}
                 isWishlisted={wishlistIds.includes(product.id)}
-                onAddToCart={onAddToCart}
               />
             ))}
           </div>
